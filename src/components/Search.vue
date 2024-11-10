@@ -16,6 +16,7 @@
         <input
             type="text"
             class="form-control my-1"
+
             placeholder="Search stories by title, url or author"
             @input="handleSearch"
             v-model="query"
@@ -26,7 +27,7 @@
           found...</p>
         <ul class="list-group" v-if="results.length !== 0">
           <li class="list-group-item" v-for="result in results.slice(0, 7)" :key="result.objectID">
-            <a :href="result.url" target="_blank" class="text-black">{{ result.title }}</a>
+            <a :href="result.url" target="_blank" style="text-decoration: none" class="text-black">{{ result.title }}</a>
           </li>
         </ul>
       </div>
