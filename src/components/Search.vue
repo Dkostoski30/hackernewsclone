@@ -15,16 +15,16 @@
         </span>
         <input
             type="text"
-            class="form-control"
+            class="form-control my-1"
             placeholder="Search stories by title, url or author"
             @input="handleSearch"
             v-model="query"
         />
       </div>
-      <p v-if="results.length === 0 && query" class="text-muted mx-4 mt-2 position-absolute w-100">No results
-        found...</p>
-      <div class="results-container mx-5 position-absolute w-100" v-if="results.length !== 0">
-        <ul class="list-group">
+      <div class="results-container mx-5 position-absolute w-100">
+        <p v-if="results.length === 0 && query" class="text-muted mx-4 mt-2 position-absolute w-100">No results
+          found...</p>
+        <ul class="list-group" v-if="results.length !== 0">
           <li class="list-group-item" v-for="result in results.slice(0, 7)" :key="result.objectID">
             <a :href="result.url" target="_blank" class="text-black">{{ result.title }}</a>
           </li>
@@ -39,15 +39,27 @@
 #navbar {
   z-index: 1000;
 }
-
+.input-group{
+  border: 1px solid gray;
+  border-radius: 4rem;
+  padding: 0 1.5rem;
+}
 input {
   padding: 0.5em;
   margin: 1em 0;
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
+  border: none;
 }
-
+input:focus {
+  padding: 0.5em;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border: none;
+}
 .results-container {
   overflow-y: hidden;
   overflow-x: hidden;

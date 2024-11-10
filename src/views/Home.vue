@@ -1,11 +1,15 @@
 <script setup>
 
 
+import Sidebar from "@/components/SIdebar.vue";
 </script>
 
 <template>
-  <main class="mt-xxl-5">
+  <header style="width: 90%;">
     <Search/>
+  </header>
+  <main class="d-flex align-items-start" style="width: 90%;">
+    <Sidebar/>
     <List :posts="posts"/>
   </main>
 </template>
