@@ -4,9 +4,6 @@ import Home from "@/views/Home.vue";
 </script>
 
 <template>
-  <header>
-    <Search />
-  </header>
   <main>
     <Home/>
   </main>

@@ -4,7 +4,8 @@
 </script>
 
 <template>
-  <main>
+  <main class="mt-xxl-5">
+    <Search/>
     <List :posts="posts"/>
   </main>
 </template>
